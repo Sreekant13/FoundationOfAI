@@ -1,4 +1,4 @@
-# FoundationOfAI
+# Traveling Salesman Problem
 ## Project based on course load(CSCI561)
 
 # Objective
