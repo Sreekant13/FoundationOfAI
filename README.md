@@ -1,5 +1,5 @@
 # Traveling Salesman Problem
-## Project based on course load(CSCI561)
+## Project based on Genetic Algorithm(CSCI561)
 
 # Objective
 ### Implement a Genetic Algorithm (GA) to solve a 3D Traveling Salesman Problem (TSP).
