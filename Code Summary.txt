@@ -1,0 +1,59 @@
+Topics and Functions Used to Achieve the Goal
+1. Initialization of Population
+generate_population(size, cities)
+Creates a list of randomly generated paths.
+Uses randomized shuffling to generate variations of potential solutions.
+Ensures initial diversity.
+2. Distance Calculation
+compute_distance_between_cities(city1, city2)
+
+Computes Euclidean distance between two cities.
+Uses NumPy for efficient calculations.
+calculate_path_distance(path)
+
+Computes the total path distance including the return to the start.
+3. Fitness Evaluation
+rank_population(population)
+Ranks all paths based on their fitness (inverse of distance).
+The best solutions (shortest paths) get higher priority.
+4. Parent Selection
+select_parent(ranked_population)
+Uses Roulette Wheel Selection to pick parents.
+Ensures that shorter paths have a higher probability of passing their traits.
+5. Crossover Operations
+ordered_crossover_for_lower_number_of_cities(first_parent, second_parent)
+
+Used when number of cities is small.
+Selects a random subsequence from one parent and fills the remaining cities from the other parent.
+partially_mapped_crossover_for_higher_number_of_cities(first_parent, second_parent)
+
+Used when number of cities is large.
+Ensures every city appears exactly once.
+crossover(first_parent, second_parent, number_of_cities)
+
+Decides between Ordered Crossover or Partially Mapped Crossover based on city count.
+6. Mutation for Genetic Diversity
+mutate(path, rate_of_mutation=0.01)
+Introduces small random changes (swaps/shuffles) in the path.
+Prevents the algorithm from getting stuck in local optima.
+7. Maintaining Diversity
+maintain_diversity_in_Genetic_Algorithm(population, upper_bound=0.02)
+Checks if the population has become too similar.
+Introduces new random paths to maintain genetic variety.
+8. Greedy Heuristic for Initialization
+Greedy_Heuristic_for_nearest_city(cities)
+Initializes one path using a greedy approach (nearest neighbor).
+Ensures at least one good starting candidate.
+9. Main Genetic Algorithm Execution
+TSP_Homework1_Genetic_Algorithm()
+Runs multiple generations of:
+Selection → Crossover → Mutation
+Keeps the best solutions.
+Stops after a set number of generations.
+10. File Handling
+read_input("input.txt")
+
+Reads number of cities and their 3D coordinates.
+write_output("output.txt", result)
+
+Outputs the total path distance and the ordered city sequence.
